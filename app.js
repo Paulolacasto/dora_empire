@@ -174,12 +174,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// scripts.js
-document.getElementById('search-button').addEventListener('click', function() {
-  var searchTerm = document.getElementById('.searchInput').value;
-  if (searchTerm) {
-      alert('You searched for: ' + searchTerm);
-  } else {
-      alert('Please enter a search term.');
-  }
-});
+const userCardTemplate = document.querySelector("[data-user-template]")
+fetch("https://jsonplaceholder.org/users")
+.then(res => res.json())
+.then(data => {
+  const card = userCardTemplate.textContent.clone
+})
