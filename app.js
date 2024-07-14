@@ -180,3 +180,18 @@ fetch("https://jsonplaceholder.org/users")
 .then(data => {
   const card = userCardTemplate.textContent.clone
 })
+
+// script.js
+document.getElementById('searchIcon').addEventListener('click', function() {
+  const query = document.getElementById('searchInput').value;
+  if (query) {
+      performSearch(query);
+  }
+});
+
+function performSearch(query) {
+  // For demonstration purposes, we'll just display the query.
+  // In a real application, you would send the query to a server or perform some other search operation.
+  const resultsContainer = document.getElementById('results');
+  resultsContainer.innerHTML = `You searched for: ${query}`;
+}
